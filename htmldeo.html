@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name — Portfolio</title>
+  <meta name="description" content="Portfolio of Your Name: projects, skills, and contact." />
+  <style>
+    :root { --maxw: 980px; --pad: 16px; --radius: 14px; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height:1.6; }
+    header { position: sticky; top: 0; background:#fff; border-bottom:1px solid #eee; z-index:10; }
+    nav { max-width: var(--maxw); margin:auto; padding: 10px var(--pad); display:flex; gap:16px; align-items:center; justify-content:space-between; }
+    nav a { text-decoration:none; color:#222; padding:6px 10px; border-radius:10px; }
+    nav a:hover { background:#f4f4f4; }
+    .container { max-width: var(--maxw); margin:auto; padding: 24px var(--pad); }
+    .hero { display:grid; gap:20px; grid-template-columns: 1fr; padding: 28px 0; }
+    .hero h1 { font-size: clamp(28px, 5vw, 44px); margin:0; }
+    .btn { display:inline-block; padding:10px 16px; border-radius: 999px; border:1px solid #222; text-decoration:none; color:#222; }
+    .btn.primary { background:#222; color:#fff; }
+    .grid { display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); }
+    .card { border:1px solid #eee; border-radius: var(--radius); padding:16px; background:#fff; }
+    .card h3 { margin-top:0; }
+    footer { margin-top:40px; padding: 24px var(--pad); border-top:1px solid #eee; color:#666; }
+    img.avatar { width:120px; height:120px; border-radius:50%; object-fit:cover; border:1px solid #eee; }
+    @media (min-width: 720px) {
+      .hero { grid-template-columns: 1.2fr .8fr; align-items:center; }
+    }
+  </style>
+</head>
+<body>
+  <header aria-label="Primary">
+    <nav>
+      <strong>Your Name</strong>
+      <div>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a class="btn" href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+<main class="container">
+    <section class="hero" aria-labelledby="intro-title">
+      <div>
+        <h1 id="intro-title">Front-End Developer & Learner</h1>
+        <p>I build clean, accessible, responsive web pages using HTML, CSS, and JavaScript.</p>
+        <p>
+          <a class="btn primary" href="#projects">See Projects</a>
+          <a class="btn" href="#skills">My Skills</a>
+        </p>
+      </div>
+      <div style="text-align:center;">
+        <img class="avatar" src="https://via.placeholder.com/240" alt="Profile photo of Your Name" />
+      </div>
+    </section>
+<section id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title">Projects</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Recipe Book</h3>
+          <p>Static recipe pages with ingredients, steps, and nutrition table.</p>
+          <a href="#" class="btn">View</a>
+        </article>
+        <article class="card">
+          <h3>Landing Page</h3>
+          <p>Product hero, features, pricing, and FAQ section with pure HTML+CSS.</p>
+          <a href="#" class="btn">View</a>
+        </article>
+        <article class="card">
+          <h3>Photo Gallery</h3>
+          <p>Responsive grid with figure/figcaption and hover effects.</p>
+          <a href="#" class="btn">View</a>
+        </article>
+      </div>
+    </section>
+<section id="skills" aria-labelledby="skills-title">
+      <h2 id="skills-title">Skills</h2>
+      <ul>
+        <li>Semantic HTML (header, main, section, article, footer)</li>
+        <li>Responsive CSS (grid, flexbox, media queries)</li>
+        <li>Basic JavaScript (DOM, events — optional)</li>
+        <li>Accessibility (labels, alt text, landmarks)</li>
+      </ul>
+    </section>
+
+<section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <p>Email me at <a href="mailto:you@example.com">you@example.com</a> or find me on
+        <a href="#" rel="noopener">LinkedIn</a>.
+      </p>
+      <form onsubmit="alert('Thanks! This is a demo form.'); return false;" aria-label="Contact form">
+        <p>
+          <label for="name">Name</label><br/>
+          <input id="name" name="name" type="text" required />
+        </p>
+        <p>
+          <label for="msg">Message</label><br/>
+          <textarea id="msg" name="msg" rows="4" required></textarea>
+        </p>
+        <button class="btn primary" type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+<footer>
+    <small>© <span id="y"></span> Your Name. Built with pure HTML+CSS.</small>
+  </footer>
+<script>
+    // tiny enhancement: auto year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
